@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 git clone git@github.com:322nes/LATEST.git <br>
 npm install <br>
 npm run dev <br>
@@ -11,3 +12,6 @@ git commit -m "first commit" <br>
 git branch -M main <br>
 git remote add origin git@github.com:322nes/НАЗВАНИЕ_РЕПОЗИТОРИЯ.git <br>
 git push -u origin main
+=======
+# PodOfCast
+>>>>>>> 793d85fdf229243666de669774897d1364047b26
