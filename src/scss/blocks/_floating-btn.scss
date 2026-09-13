@@ -1,0 +1,27 @@
+.floating-btn {
+  position: fixed;
+  top: 200px;
+  left: 500px;
+  z-index: 9999;
+
+  padding: 24px 48px;
+  border: none;
+  border-radius: 10px;
+  background: var(--black);
+  color: #fff;
+  font-family: 'Mont', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: grab;
+  user-select: none;
+  transition: box-shadow 0.24s;
+
+  @include hover {
+    box-shadow: 6px 6px rgba(0, 0, 0, 0.24);
+  }
+
+  &.dragging {
+    cursor: grabbing;
+  }
+}

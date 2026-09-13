@@ -1,18 +1,19 @@
 // variables
 :root {
-  --color-black: #1F1F1F;
-  --color-white: #F1F1F1;
-  --color-gray: #515151;
+  --black: #000000;
+  --gray: #4D4D4D;
+  --red: #CD4631;
+  --beg: #F7EDE8;
+  --blue: #81ADC8;
+  --blue2: #EDF3F7;
 }
 
 //--------------------------------------------------------------------------\\
 
 html {
   scrollbar-gutter: stable;
-}
-
-body {
-  background-color: var(--color-gray);
+  font-family: 'Mont';
+  font-weight: 700;
 }
 
 .wrapper {
@@ -22,7 +23,7 @@ body {
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1440px;
   height: 100%;
   margin: 0 auto;
 }

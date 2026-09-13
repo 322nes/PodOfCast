@@ -1,9 +1,17 @@
 @font-face {
-  font-family: '';
-  src: local(''), local(''),
-    url('') format('woff2'),
-    url('') format('woff');
-  font-weight: 300;
+  font-family: 'Mont';
+  src: local('Montserrat Alternates Bold'), local('MontserratAlternates-Bold'),
+    url('MontserratAlternates-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Mont';
+  src: local('Montserrat Alternates Medium'), local('MontserratAlternates-Medium'),
+    url('MontserratAlternates-Medium.woff2') format('woff2');
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }

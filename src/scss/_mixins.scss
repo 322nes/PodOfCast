@@ -1,4 +1,4 @@
-@mixin text-size($max: 50, $min: 14) {
+@mixin text-size($max: 37, $min: 14) {
   font-size: clamp(#{$min}px, #{$max / 1440 * 100}vw, #{$max}px);
 }
 

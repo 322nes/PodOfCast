@@ -1,1 +1,163 @@
-.header {}
+.header {
+  background-color: var(--beg);
+
+  &_navigation {}
+
+  &_logo {}
+
+}
+
+
+
+// =========Animdation Logo============
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+
+  color: var(--black, #000);
+  text-decoration: none;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1;
+
+  // animation: logo-breathe 4.8s ease-in-out infinite;
+
+  // ---------- круг ----------
+  // ---------- рельс (окружность, по которой бежит дуга) ----------
+  &__circle {
+    position: relative;
+    display: block;
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+
+    // если хотите видеть сам рельс — раскомментируйте:
+    border: 5px solid rgba(0,0,0,.08);
+  }
+
+  // ---------- бегущий сегмент ----------
+  &__arc {
+    position: absolute;
+    inset: 0;
+
+    // рисуем сегмент как рамку круга с ¾ прозрачных сторон
+    border: 5px solid var(--black, #000);
+    border-radius: 50%;
+
+    // виден только один сегмент, остальное прозрачно
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+
+    // траектория движения — круг радиусом 32px (половина 64)
+    offset-path: circle(32px at 50% 50%);
+
+    // анимация «пробега» по траектории
+    animation: arc-run 2.4s ease-in-out infinite;
+  }
+
+  // ---------- текст ----------
+  &__text {
+    display: flex;
+    position: absolute;
+    right: -15px;
+    bottom: -15px;
+    font-size: 14px;
+    flex-direction: column;
+    height: 3em; // ровно три строки — чтобы выезд не «прыгал»
+    overflow: hidden;
+    z-index: 100;
+  }
+
+  &__line {
+    display: block;
+    opacity: 0;
+    transform: translateX(24px);
+    // animation: line-in 2.4s ease-out infinite;
+    animation: line-in 2.4s ease-out infinite;
+
+    &--pod {
+      animation-delay: 0.05s;
+      color: var(--red, #CD4631);
+    }
+
+    &--of {
+      animation-delay: 0.25s;
+    }
+
+    &--cast {
+      animation-delay: 0.45s;
+    }
+  }
+}
+
+// ---------- keyframes ----------
+
+// дуга пробегает 100% окружности и останавливается
+@keyframes arc-run {
+  0% {
+    offset-distance: 0%;
+  }
+
+  50% {
+    offset-distance: 100%;
+  }
+
+  100% {
+    offset-distance: 100%;
+  }
+
+  // пауза до конца цикла
+}
+
+@keyframes line-in {
+  0% {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+
+  12% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  85% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+}
+
+@keyframes logo-breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .logo,
+  .logo__arc,
+  .logo__line {
+    animation: none;
+  }
+
+  .logo__line {
+    opacity: 1;
+    transform: none;
+  }
+}
