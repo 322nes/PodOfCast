@@ -1,32 +1,16 @@
-/* floating-btn.js
-   Плавающая кнопка SUBSCRIBE с перетаскиванием по экрану.
-   - position: fixed → держится относительно окна, не скроллится с контентом
-   - клик (без перетаскивания) — переход по ссылке
-   - позиция сохраняется в localStorage и восстанавливается при загрузке
-   - при ресайзе окна кнопка не уезжает за границы */
-
 (function () {
   'use strict';
 
-  // ---------- настройки ----------
   const LABEL = 'SUBSCRIBE';
   const HREF = '/subscribe';
-  const START = { top: 24, left: 24 };
   const STORAGE_KEY = 'floatingBtnPos';
-  const DRAG_THRESHOLD = 4; // px — меньше этого считаем кликом, а не перетаскиванием
+  const DRAG_THRESHOLD = 4;
 
-  // ---------- создаём элемент ----------
   const btn = document.createElement('a');
-  btn.className = 'floating-btn';
+  btn.className = 'floating-btn button';
   btn.href = HREF;
   btn.textContent = LABEL;
 
-  // стартовая позиция
-  const saved = loadPos();
-  btn.style.top = (saved?.y ?? START.top) + 'px';
-  btn.style.left = (saved?.x ?? START.left) + 'px';
-
-  // ---------- монтирование ----------
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', mount);
   } else {
@@ -35,20 +19,26 @@
 
   function mount() {
     document.body.appendChild(btn);
+
+    // восстановить сохранённую позицию, если есть
+    const saved = loadPos();
+    if (saved) {
+      btn.style.left = saved.x + 'px';
+      btn.style.top = saved.y + 'px';
+    }
+
     initDrag();
     window.addEventListener('resize', clampToViewport);
-    clampToViewport(); // на случай, если сохранённая позиция вне текущего окна
+    clampToViewport();
   }
 
-  // ---------- перетаскивание ----------
   function initDrag() {
     let dragging = false;
-    let moved = false;         // был ли фактический сдвиг
+    let moved = false;
     let startX = 0, startY = 0;
     let offsetX = 0, offsetY = 0;
 
     btn.addEventListener('pointerdown', (e) => {
-      // только левая кнопка мыши
       if (e.button !== 0 && e.pointerType === 'mouse') return;
 
       dragging = true;
@@ -67,7 +57,6 @@
     btn.addEventListener('pointermove', (e) => {
       if (!dragging) return;
 
-      // порог: не считаем дрожание мыши перетаскиванием
       if (!moved) {
         const dx = Math.abs(e.clientX - startX);
         const dy = Math.abs(e.clientY - startY);
@@ -101,7 +90,6 @@
       if (moved) savePos();
     });
 
-    // клик — только если не таскали
     btn.addEventListener('click', (e) => {
       if (moved) {
         e.preventDefault();
@@ -109,13 +97,9 @@
       }
     });
 
-    // запрет «нативного» drag у ссылки
     btn.addEventListener('dragstart', (e) => e.preventDefault());
   }
 
-  // ---------- утилиты ----------
-
-  // не даём кнопке уехать за пределы окна (например, после ресайза)
   function clampToViewport() {
     const maxX = window.innerWidth - btn.offsetWidth;
     const maxY = window.innerHeight - btn.offsetHeight;
@@ -133,7 +117,7 @@
         x: parseInt(btn.style.left, 10) || 0,
         y: parseInt(btn.style.top, 10) || 0,
       }));
-    } catch (_) { /* приватный режим — молча игнорируем */ }
+    } catch (_) { }
   }
 
   function loadPos() {

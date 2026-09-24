@@ -12,7 +12,15 @@
 
 html {
   scrollbar-gutter: stable;
-  font-family: 'Mont';
+}
+
+// body {
+//   font-family: 'Mont', sans-serif;
+//   font-weight: 500;
+// }
+
+body {
+  font-family: 'Montserrat Alternates', sans-serif;
   font-weight: 700;
 }
 
@@ -23,7 +31,7 @@ html {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1160px;
   height: 100%;
   margin: 0 auto;
 }
@@ -47,4 +55,17 @@ svg *[fill] {
 
 svg *[stroke] {
   stroke: currentColor
+}
+
+.button {
+  padding: 24px 48px;
+  border: none;
+  border-radius: 10px;
+  background: var(--black);
+  color: #fff;
+  transition: box-shadow 0.28s;
+
+  @include hover {
+    box-shadow: 6px 6px rgba(0, 0, 0, 0.24);
+  }
 }

@@ -3,6 +3,10 @@
 
 <head>
   <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;700&display=swap"
+    rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="./public/images/icon/N.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Шаблон сайта</title>
@@ -13,8 +17,10 @@
   <div class="wrapper">
 
     <header class="header">
-      <div class="header_navigation">
+      <div class="header_wrapper container">
+
         <a class="header_logo logo" aria-label="POD OF CAST" href="/">
+
           <span class="logo__circle">
             <span class="logo__arc"></span>
           </span>
@@ -26,21 +32,57 @@
           </span>
         </a>
 
-
         <nav class="header_navigation navigation">
           <ul class="header_navigation-wrapper">
-            <li class="header_navigation-item">Episodes</li>
-            <li class="header_navigation-item">About</li>
-            <li class="header_navigation-item">More</li>
+            <li class="header_navigation-item">
+              <button type="button">
+                <span>Episodes</span>
+              </button>
+            </li>
+            <li class="header_navigation-item">
+              <button type="button">
+                <span>About</span>
+              </button>
+            </li>
+            <!-- <li class="header_navigation-item">
+              <a href="/">More</a>
+            </li> -->
+            <li class="header_navigation-item header_navigation-item--dropdown">
+              <button type="button" class="header_navigation-toggle" aria-expanded="false" aria-haspopup="true">
+                <span>More</span>
+              </button>
+
+              <ul class="header_navigation-dropdown">
+                <li><a href="/link1"><span>Link1</span></a></li>
+                <li><a href="/link2"><span>Link2</span></a></li>
+                <li><a href="/link3"><span>Link3</span></a></li>
+              </ul>
+            </li>
           </ul>
         </nav>
+
         <div class="header_navigation-buttons">
-          <a class="header_navigation-buttons--item" alt="button" href="*">RECENT EPISODES</a>
-          <a class="header_navigation-buttons--item" alt="button" href="*">SUBSCRIBE</a>
+          <a class="header_navigation-buttons--item button" alt="button" href="*">RECENT EPISODES</a>
+          <a class="header_navigation-buttons--item button" alt="button" href="*">SUBSCRIBE</a>
+        </div>
+
+      </div>
+      <div class="header_text">
+        <p class="header_text-title">
+          Your Daily<br>
+          <span>Podcast</span>
+        </p>
+        <p class="header_text-subtitle">
+          We cover all kinds of categories and<br>
+          a weekly special guest.
+        </p>
+        <div class="header_text-decor">
+          <img class="header_text-decor--1" src="/public/images/decor/header-star-kar.svg" alt="">
+          <img class="header_text-decor--2" src="/public/images/decor/header-star1.svg" alt="">
+          <img class="header_text-decor--3" src="/public/images/decor/header-star2.svg" alt="">
+          <img class="header_text-decor--4" src="/public/images/decor/header-star3.svg" alt="">
         </div>
       </div>
-
-
     </header>
 
 
