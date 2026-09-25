@@ -20,7 +20,7 @@ import '@splidejs/splide/css';
 
 const splide = new Splide('.header-splider__slider', {
   type: 'loop',
-  // autoplay: true,        // ← включает автопрокрутку
+  autoplay: true,        // ← включает автопрокрутку
   interval: 5000,        // ← пауза между слайдами, мс (по умолчанию 5000)
   pauseOnHover: true,    // ← пауза при наведении мыши
   pauseOnFocus: true,    // ← пауза при фокусе с клавиатуры
@@ -30,7 +30,7 @@ const splide = new Splide('.header-splider__slider', {
   focus: 'center',
   gap: '20px',
   padding: '5%',
-  arrows: false,
+  arrows: true,
   pagination: false,
   drag: true,
   breakpoints: {
