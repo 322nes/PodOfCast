@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;700&display=swap"
     rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="./public/images/icon/N.svg" />
+  <link rel="icon" type="image/svg+xml" href="/images/icon/N.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Шаблон сайта</title>
   <script type="module" src="./src/js/index.js"></script>
@@ -17,7 +17,8 @@
   <div class="wrapper">
 
     <header class="header">
-      <div class="header_wrapper container">
+
+      <section class="header_wrapper container">
 
         <a class="header_logo logo" aria-label="POD OF CAST" href="/">
 
@@ -66,23 +67,175 @@
           <a class="header_navigation-buttons--item button" alt="button" href="*">SUBSCRIBE</a>
         </div>
 
-      </div>
-      <div class="header_text">
-        <p class="header_text-title">
-          Your Daily<br>
+      </section>
+
+      <section class="header_text">
+
+        <div class="header_text-decor1">
+          <span class="header_text-blob header_text-blob--1"></span>
+          <span class="header_text-blob header_text-blob--2"></span>
+          <span class="header_text-blob header_text-blob--3"></span>
+        </div>
+
+        <p class="header_text-title">Your Daily<br>
           <span>Podcast</span>
         </p>
+
         <p class="header_text-subtitle">
-          We cover all kinds of categories and<br>
-          a weekly special guest.
+          <span class="header_text-subline">We cover all kinds of categories and</span>
+          <span class="header_text-subline">a weekly special guest.</span>
         </p>
-        <div class="header_text-decor">
-          <img class="header_text-decor--1" src="/public/images/decor/header-star-kar.svg" alt="">
-          <img class="header_text-decor--2" src="/public/images/decor/header-star1.svg" alt="">
-          <img class="header_text-decor--3" src="/public/images/decor/header-star2.svg" alt="">
-          <img class="header_text-decor--4" src="/public/images/decor/header-star3.svg" alt="">
+
+        <div class="header_text-decor2">
+          <img class="header_text-decor--1" src="/images/decor/header-star-kar.svg" alt="">
+          <img class="header_text-decor--2" src="/images/decor/header-star1.svg" alt="">
+          <img class="header_text-decor--3" src="/images/decor/header-star2.svg" alt="">
+          <img class="header_text-decor--4" src="/images/decor/header-star3.svg" alt="">
         </div>
-      </div>
+      </section>
+
+      <section class="header-splider">
+        <div class="container">
+
+          <div class="splide header-splider__slider" aria-label="Recent Episodes carousel">
+            <div class="splide__track">
+              <ul class="splide__list">
+
+                <li class="splide__slide">
+
+                  <article class="episode-card">
+                    <div class="episode-card__body">
+                      <div class="episode-card__decor episode-card__decor--tesla">
+                        <img src="/public/images/card/card-decor111.svg" alt="">
+                        <img src="/public/images/card/card-decor222.svg" alt="">
+                        <img src="/public/images/card/card-decor3.svg" alt="">
+                      </div>
+                      <img class="episode-card__cover" src="/images/card/image1.jpg" alt="">
+                      <div class="episode-card__social">
+                        <a href="/"><img src="/public/images/icon/card-google-podcast.svg" alt="podcast"></a>
+                        <a href="/"><img src="/public/images/icon/card-spotify.svg" alt="spotify"></a>
+                        <a href="/"><img src="/public/images/icon/card-youtube.svg" alt="youtube"></a>
+                      </div>
+                      <span class="episode-card__title">Tesla Autopilot</span>
+                    </div>
+                  </article>
+
+                </li>
+
+                <li class="splide__slide">
+
+                  <article class="episode-card">
+                    <div class="episode-card__body">
+                      <div class="episode-card__decor episode-card__decor--confidence">
+                        <img src="/public/images/card/card-decor11.svg" alt="">
+                        <img src="/public/images/card/card-decor22.svg" alt="">
+                        <img src="/public/images/card/card-decor33.svg" alt="">
+                        <img src="/public/images/card/card-decor44.svg" alt="">
+                      </div>
+                      <img class="episode-card__cover" src="/images/card/image2.jpg" alt="">
+                      <div class="episode-card__social">
+                        <a href="/"><img src="/public/images/icon/card-google-podcast.svg" alt="podcast"></a>
+                        <a href="/"><img src="/public/images/icon/card-spotify.svg" alt="spotify"></a>
+                        <a href="/"><img src="/public/images/icon/card-youtube.svg" alt="youtube"></a>
+                      </div>
+                      <span class="episode-card__title">Self–confidence</span>
+                    </div>
+                  </article>
+
+                </li>
+
+                <li class="splide__slide">
+
+                  <article class="episode-card">
+                    <div class="episode-card__body">
+                      <div class="episode-card__decor episode-card__decor--perplexed">
+                        <img src="/public/images/card/card-decor1.svg" alt="">
+                        <img src="/public/images/card/card-decor2.svg" alt="">
+                        <img src="/public/images/card/card-decor3.svg" alt="">
+                      </div>
+                      <img class="episode-card__cover" src="/images/card/image3.jpg" alt="">
+                      <div class="episode-card__social">
+                        <a href="/"><img src="/public/images/icon/card-google-podcast.svg" alt="podcast"></a>
+                        <a href="/"><img src="/public/images/icon/card-spotify.svg" alt="spotify"></a>
+                        <a href="/"><img src="/public/images/icon/card-youtube.svg" alt="youtube"></a>
+                      </div>
+                      <span class="episode-card__title">Perplexed Mind</span>
+                    </div>
+                  </article>
+
+                </li>
+
+                <li class="splide__slide">
+
+                  <article class="episode-card">
+                    <div class="episode-card__body">
+                      <div class="episode-card__decor episode-card__decor--rights">
+                        <img src="/public/images/card/card-decor1111.svg" alt="">
+                        <img src="/public/images/card/card-decor2222.svg" alt="">
+                        <img src="/public/images/card/card-decor3333.svg" alt="">
+                        <img src="/public/images/card/card-decor4444.svg" alt="">
+                        <img src="/public/images/card/card-decor5555.svg" alt="">
+                        <img src="/public/images/card/card-decor6666.svg" alt="">
+                      </div>
+                      <img class="episode-card__cover" src="/images/card/image4.jpg" alt="">
+                      <div class="episode-card__social">
+                        <a href="/"><img src="/public/images/icon/card-google-podcast.svg" alt="podcast"></a>
+                        <a href="/"><img src="/public/images/icon/card-spotify.svg" alt="spotify"></a>
+                        <a href="/"><img src="/public/images/icon/card-youtube.svg" alt="youtube"></a>
+                      </div>
+                      <span class="episode-card__title">Women’s Rights</span>
+                    </div>
+                  </article>
+
+                </li>
+
+                <li class="splide__slide">
+
+                  <article class="episode-card">
+                    <div class="episode-card__body">
+                      <div class="episode-card__decor episode-card__decor--social-class">
+                        <img src="/public/images/card/card-decor11111.svg" alt="">
+                      </div>
+                      <img class="episode-card__cover" src="/images/card/image5.jpg" alt="">
+                      <div class="episode-card__social">
+                        <a href="/"><img src="/public/images/icon/card-google-podcast.svg" alt="podcast"></a>
+                        <a href="/"><img src="/public/images/icon/card-spotify.svg" alt="spotify"></a>
+                        <a href="/"><img src="/public/images/icon/card-youtube.svg" alt="youtube"></a>
+                      </div>
+                      <span class="episode-card__title">Social Class</span>
+                    </div>
+                  </article>
+
+                </li>
+
+                <li class="splide__slide">
+
+                  <article class="episode-card">
+                    <div class="episode-card__body">
+                      <div class="episode-card__decor episode-card__decor--social-class-2">
+                        <img src="/public/images/card/card-decor111111.svg" alt="">
+                        <img src="/public/images/card/card-decor222222.svg" alt="">
+                        <img src="/public/images/card/card-decor333333.svg" alt="">
+                      </div>
+                      <img class="episode-card__cover" src="/images/card/image6.jpg" alt="">
+                      <div class="episode-card__social">
+                        <a href="/"><img src="/public/images/icon/card-google-podcast.svg" alt="podcast"></a>
+                        <a href="/"><img src="/public/images/icon/card-spotify.svg" alt="spotify"></a>
+                        <a href="/"><img src="/public/images/icon/card-youtube.svg" alt="youtube"></a>
+                      </div>
+                      <span class="episode-card__title">Social Class</span>
+                    </div>
+                  </article>
+
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
     </header>
 
 
