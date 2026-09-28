@@ -10,8 +10,7 @@
     align-items: center;
     width: 100%;
     height: 70px;
-    padding-top: 10px;
-
+    padding: 15px 20px 0;
     transition: transform .35s ease;
   }
 
@@ -82,7 +81,8 @@
   }
 
   &_navigation {
-    margin-left: -200px;
+    padding-left: -180px;
+    margin-left: 20px;
     position: relative;
 
     &-wrapper {
@@ -243,7 +243,6 @@
   }
 
   &_text {
-    height: 5000px;
     text-align: center;
     margin-top: 64px;
     position: relative;
@@ -365,7 +364,7 @@
   }
 
 
-  &-splider {
+  &_splider {
 
     padding: 140px 0;
 
@@ -640,6 +639,55 @@
         color: var(--blue);
       }
     }
+  }
+
+  &_social {
+    position: relative;
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 100px;
+      border: 2px solid;
+      border-left: transparent;
+      border-right: transparent;
+    }
+
+    &-text {
+      font-weight: 700;
+      font-size: 23px;
+    }
+
+    &-link {
+      padding: 46px 0;
+      transition: all 0.3s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 230px;
+        height: 90px;
+        transform: translate(-50%, -50%) scale(.8);
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 0.4s ease;
+        pointer-events: none;
+        box-shadow: 0px 0px 15px 7px var(--red);
+      }
+
+      @include hover {
+        transform: scale(1.1) rotate(-13deg);
+
+        &::after {
+          opacity: 0.4;
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+    }
+
   }
 }
 
