@@ -21,11 +21,9 @@
       <section class="header_wrapper container">
 
         <a class="header_logo logo" aria-label="POD OF CAST" href="/">
-
           <span class="logo__circle">
             <span class="logo__arc"></span>
           </span>
-
           <span class="logo__text">
             <span class="logo__line logo__line--pod">POD</span>
             <span class="logo__line logo__line--of">OF</span>
@@ -33,26 +31,55 @@
           </span>
         </a>
 
+        <button type="button" class="header_burger" aria-label="Открыть меню" aria-expanded="false"
+          aria-controls="header-mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div class="header_overlay" aria-hidden="true"></div>
+
+        <div class="header_mobile-menu" id="header-mobile-menu">
+          <nav class="header_navigation navigation">
+            <ul class="header_navigation-wrapper">
+              <li class="header_navigation-item">
+                <button type="button"><span>Episodes</span></button>
+              </li>
+              <li class="header_navigation-item">
+                <button type="button"><span>About</span></button>
+              </li>
+              <li class="header_navigation-item header_navigation-item--dropdown">
+                <button type="button" class="header_navigation-toggle" aria-expanded="false" aria-haspopup="true">
+                  <span>More</span>
+                </button>
+                <ul class="header_navigation-dropdown">
+                  <li><a href="/link1"><span>Link1</span></a></li>
+                  <li><a href="/link2"><span>Link2</span></a></li>
+                  <li><a href="/link3"><span>Link3</span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="header_navigation-buttons">
+            <a class="header_navigation-buttons--item button" href="#">RECENT EPISODES</a>
+            <a class="header_navigation-buttons--item button" href="#">SUBSCRIBE</a>
+          </div>
+        </div>
+
         <nav class="header_navigation navigation">
           <ul class="header_navigation-wrapper">
             <li class="header_navigation-item">
-              <button type="button">
-                <span>Episodes</span>
-              </button>
+              <button type="button"><span>Episodes</span></button>
             </li>
             <li class="header_navigation-item">
-              <button type="button">
-                <span>About</span>
-              </button>
+              <button type="button"><span>About</span></button>
             </li>
-            <!-- <li class="header_navigation-item">
-              <a href="/">More</a>
-            </li> -->
             <li class="header_navigation-item header_navigation-item--dropdown">
               <button type="button" class="header_navigation-toggle" aria-expanded="false" aria-haspopup="true">
                 <span>More</span>
               </button>
-
               <ul class="header_navigation-dropdown">
                 <li><a href="/link1"><span>Link1</span></a></li>
                 <li><a href="/link2"><span>Link2</span></a></li>
@@ -63,8 +90,8 @@
         </nav>
 
         <div class="header_navigation-buttons">
-          <a class="header_navigation-buttons--item button" alt="button" href="*">RECENT EPISODES</a>
-          <a class="header_navigation-buttons--item button" alt="button" href="*">SUBSCRIBE</a>
+          <a class="header_navigation-buttons--item button" href="#">RECENT EPISODES</a>
+          <a class="header_navigation-buttons--item button" href="#">SUBSCRIBE</a>
         </div>
 
       </section>
@@ -256,7 +283,7 @@
     <main class="main">
 
       <div class="header_social-decor">
-        <img src="public/images/decor/header-merge.svg" alt="">
+        <img src="/images/decor/header-merge.svg" alt="">
       </div>
     </main>
 
